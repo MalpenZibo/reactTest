@@ -27,3 +27,13 @@ div.userCard > div > div {
 div.userCard > div > div > span:first-of-type {
     font-weight: bold;
 }
+
+@media (min-width: 220px) and (max-width: 1024px) {
+    div.userCard > div {
+        padding: 0rem 0.5rem;
+    }
+
+    div.userCard > div > div {
+        flex-direction: column;
+    }
+}
