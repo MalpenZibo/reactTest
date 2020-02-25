@@ -2,20 +2,18 @@ div.userCard {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 wired-image {
     width: 15rem;
 }
 
-div.userCard > h3 {
-    padding-left: 2rem;
-}
-
 div.userCard > div {
     display: flex;
     flex-direction: column;
-    padding: 0rem 3rem;
+    padding: 0rem 1rem;
     flex: 1 1 auto;
 }
 
