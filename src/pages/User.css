@@ -1,39 +1,40 @@
-div.userCard {
+.user-content {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 
-wired-image {
-    width: 15rem;
+div.card-header h4 {
+    margin-block-start: 0rem;
+    margin-block-end: 0rem;
 }
 
-div.userCard > div {
+div.card-body {
     display: flex;
     flex-direction: column;
-    padding: 0rem 1rem;
-    flex: 1 1 auto;
+    flex: content;
 }
 
-div.userCard > div > div {
+div.card-body > div {
     display: flex;
     
     flex-direction: row;
     justify-content: space-between;
 }
 
-div.userCard > div > div > span:first-of-type {
+div.card-body > div > span:first-of-type {
     font-weight: bold;
+    padding-right: 1rem;
 }
 
 @media (min-width: 220px) and (max-width: 1024px) {
-    div.userCard > div {
+    /*div.userCard > div {
         padding: 0rem 0.5rem;
     }
 
     div.userCard > div > div {
         flex-direction: column;
-    }
+    }*/
 }

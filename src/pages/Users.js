@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './User.css';
+import WaitProgress from '../components/WaitProgress'
 
-export default function UserPage(props) {
-  const wLinkBugFix = React.createRef()
-
+export default function UserPage() {
   // Setting initial state
   const initialUserState = {
     user: {},
@@ -27,35 +26,30 @@ export default function UserPage(props) {
     getUser()
   }, []) // Don't forget the `[]`, which will prevent useEffect from running in an infinite loop
 
-  useEffect(() => {    
-    if(wLinkBugFix.current != null)
-      wLinkBugFix.current.requestUpdate();
-  })
-
-  // Return a table with some data from the API.
   return user.loading ? (
-    <wired-spinner spinning ></wired-spinner>
+    <WaitProgress />
   ) : (
-    <wired-card>
-      <div className="userCard">
-        <wired-image elevation="4" src={user.avatar_url}></wired-image>
-        <div>
-          <h3>{user.login}</h3>
+    <div className="user-content">
+      <img src={user.avatar_url} alt="avatar" className="float-left" ></img>
+      <div className="card">
+        <div className="card-header">
+          <h4 className="card-title">{user.login}</h4>
+        </div>
+        <div className="card-body">
           <div>
             <span>Name:</span>
             <span>{user.name}</span>
           </div>
           <div>
             <span>WebSite:</span>
-            <span><wired-link ref={wLinkBugFix} href={user.blog}>{user.blog}</wired-link></span>
+            <span><a href={user.blog}>{user.blog}</a></span>
           </div>
           <div>
             <span>Followers:</span>
             <span>{user.followers}</span>
           </div>
-        </div>        
+        </div>
       </div>
-      
-    </wired-card>
+    </div>
   )
 }
